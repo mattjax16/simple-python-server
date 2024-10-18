@@ -1,0 +1,42 @@
+# JetBrains IDE
+.idea/
+
+# VS Code
+.vscode/
+# Cmake Debug
+cmake-build-debug/
+build
+
+# macOS
+.DS_Store
+._*
+
+# Compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Compiled Java files
+*.class
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore specific binary files
+*.o
+*.out
+*.exe
+mytree*
+mytree
+problem1
+
+*Test*
+tree/homework_08
+tree/test-outputs
