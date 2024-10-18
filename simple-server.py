@@ -2,7 +2,7 @@ import http.server
 import socketserver
 
 # Set the port you want the server to listen on
-PORT = 8080
+PORT = 80
 
 
 # Create a handler to serve simple HTTP requests with a visit counter
@@ -36,7 +36,13 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 def main():
     # Set up the server
     with socketserver.TCPServer(("", PORT), CustomHandler) as httpd:
-        print(f"Serving HTTP on port {PORT} (http://<your-ip>:{PORT}) ...")
+        import socket
+
+        hostname = socket.gethostname()
+        ip_address = socket.gethostbyname(hostname)
+        print(
+            f"Serving HTTP on IP {ip_address} and port {PORT} (http://{ip_address}:{PORT}) ..."
+        )
         try:
             # Keep the server running to handle requests
             httpd.serve_forever()
@@ -48,3 +54,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
